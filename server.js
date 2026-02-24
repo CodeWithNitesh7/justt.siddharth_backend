@@ -1,0 +1,27 @@
+const express = require('express');
+require('dotenv').config();
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
+const connectDB = require('./src/config/db');
+
+const app = express();
+const PORT = process.env.PORT;
+const Origin = ['http://localhost:7000'];
+const Options={
+    origin:Origin,
+    methods:['GET','PUT','PATCH','DELETE','POST'],
+    credentials:true
+
+}
+
+// Connecting database
+connectDB();
+app.use(express.json());
+app.use(cookieParser());
+app.use(cors(Options));
+// routers 
+app.use('/auth',require('./src/routes/auth.routes'))
+app.use('/projects',require('./src/routes/projects.routes'))
+app.use('/contact',require('./src/routes/contact.routes'))
+
+app.listen(PORT,()=>console.log(`Server is running on http://localhost:${PORT}`))
