@@ -10,7 +10,7 @@ const Origin = ['https://codexnitesh.vercel.app',
                'https://codewithnitesh.vercel.app',
                'https://CodeWithNitesh.vercel.app'];
 const Options={
-    origin:Origin,
+    origin:"https://codewithnitesh.vercel.app",
     methods:['GET','PUT','PATCH','DELETE','POST'],
     credentials:true
 
