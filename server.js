@@ -6,7 +6,7 @@ const connectDB = require('./src/config/db');
 
 const app = express();
 const PORT = process.env.PORT;
-const Origin = ['http://localhost:7000'];
+const Origin = ['https://codexnitesh.vercel.app'];
 const Options={
     origin:Origin,
     methods:['GET','PUT','PATCH','DELETE','POST'],
