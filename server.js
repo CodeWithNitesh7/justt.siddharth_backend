@@ -4,6 +4,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./src/config/db');
 
+// Connecting database
 connectDB();
 const app = express();
 const PORT = process.env.PORT;
@@ -24,7 +25,6 @@ const Options = {
   methods: ['GET', 'PUT', 'PATCH', 'DELETE', 'POST'],
   credentials: true
 };
-// Connecting database
 app.use(cors(Options));
 app.use(express.json());
 app.use(cookieParser());
