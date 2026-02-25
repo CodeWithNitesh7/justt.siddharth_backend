@@ -13,8 +13,8 @@ exports.login = async (req, res) => {
 
     try {
         const cleanEmail = email.trim().toLowerCase();
-        const adminEmail = process.env.ADMIN_EMAIL;
-        const adminPass = process.env.ADMIN_PASS;
+        const adminEmail = process.env.Admin_email;
+        const adminPass = process.env.Admin_pass;
 
         // Validate credentials
         if (cleanEmail !== adminEmail || password !== adminPass) {
