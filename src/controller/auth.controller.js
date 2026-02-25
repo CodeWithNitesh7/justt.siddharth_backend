@@ -33,7 +33,7 @@ exports.login = async (req, res) => {
         res.cookie("token", jwtToken, {
             httpOnly: true,
             secure: true, // true in production (HTTPS)
-            // sameSite: "strict",
+            sameSite: "none",
             maxAge: 24 * 60 * 60 * 1000
         });
 
@@ -57,7 +57,7 @@ exports.logout= async(req,res)=>{
         res.clearCookie('token',{
             httpOnly:true,
             secure:true,
-            sameSite:"strict",
+            sameSite:"none",
         });
         return res.status(200).json({sucess:true,
             msg:"Logout Sucessfully"});
